@@ -51,6 +51,7 @@ void Kruskal::loadGraph(string fp) {
 
 void Kruskal::generateMST() {
     sort(edges.begin(), edges.end());
+//    for (auto)
 
 }
 

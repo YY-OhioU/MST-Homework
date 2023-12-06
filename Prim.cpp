@@ -119,7 +119,6 @@ void Prim::printMST(string fpOut) {
             s = edges[j] +1;
             e = j+1;
             if (e<s){
-                cout<<"swap"<<endl;
                 tmp = e;
                 e = s;
                 s = tmp;

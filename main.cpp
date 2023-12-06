@@ -2,7 +2,6 @@
 #include <ctime>
 #include <cstdio>
 
-#include<windows.h>
 
 #include "Prim.h"
 #include "Kruskal.h"
@@ -49,16 +48,16 @@ int main() {
     string test_name;
     string inFile;
     string outFile;
-/*
-    cout << "**************************** Prim [Question 2] ****************************** " << endl;
-    for (int i = 0; i < 6; i++) {
-        test_name = testFiles[i];
-        inFile = "graphs/" + test_name;
-        outFile = "outputs/prim_" + test_name;
-        printf("=========== %s =========== \n", test_name.c_str());
-        primTest(inFile, outFile);
-        cout << endl;
+    {
+        cout << "**************************** Prim [Question 2] ****************************** " << endl;
+        for (int i = 0; i < 6; i++) {
+            test_name = testFiles[i];
+            inFile = "graphs/" + test_name;
+            outFile = "outputs/prim_" + test_name;
+            printf("=========== %s =========== \n", test_name.c_str());
+            primTest(inFile, outFile);
+            cout << endl;
+        }
     }
-    */
-    kruskalTest();
+//    kruskalTest();
 }
