@@ -8,7 +8,7 @@
 using namespace std;
 
 
-class Kruskal : public MST {
+class KruskalBase : public MST {
 
 public:
     void loadGraph(string filepath) override;
@@ -18,12 +18,26 @@ public:
     //void timedGenerateMST();
     void printMST(string fpOut) override;
 
-    ~Kruskal();
+    ~KruskalBase();
 
 protected:
     vector<vector<int>> edges;
     vector<vector<int>> mstEdges;
+    int* parent;
+    virtual int check(int nId) = 0;
+    int totalWeight = 0;
+    bool combine(int a, int b); // union collide with c++ keyword
 
+};
+
+class Kruskal: public KruskalBase{
+protected:
+    int check(int nId) override;
+};
+
+class OptimizedKruskal : public KruskalBase{
+protected:
+    int check(int nId) override;
 };
 
 

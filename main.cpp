@@ -8,9 +8,6 @@
 
 using namespace std;
 
-#define PRIM 1
-//#define PRIM 2
-//#define PRIM 3
 
 void algoTest(MST *algo, string fp, string fpOut) {
     clock_t start, end;
@@ -30,9 +27,14 @@ void primTest(string fp, string fpOut) {
     algoTest(&prim, fp, fpOut);
 }
 
-void kruskalTest() {
+void kruskalTest(string fp, string fpOut) {
     Kruskal k;
-    cout << "abc" << endl;
+    algoTest(&k, fp, fpOut);
+}
+
+void kruskalTest2(string fp, string fpOut) {
+    OptimizedKruskal k;
+    algoTest(&k, fp, fpOut);
 }
 
 
@@ -59,5 +61,28 @@ int main() {
             cout << endl;
         }
     }
-//    kruskalTest();
+
+    {
+        cout << "**************************** Vanilla Kruskal [Question 2] ****************************** " << endl;
+        for (int i = 0; i < 6; i++) {
+            test_name = testFiles[i];
+            inFile = "graphs/" + test_name;
+            outFile = "outputs/kruskal_vanilla_" + test_name;
+            printf("=========== %s =========== \n", test_name.c_str());
+            kruskalTest(inFile, outFile);
+            cout << endl;
+        }
+    }
+    {
+        cout << "**************************** Optimized Kruskal [Question 2] ****************************** " << endl;
+        for (int i = 0; i < 6; i++) {
+            test_name = testFiles[i];
+            inFile = "graphs/" + test_name;
+            outFile = "outputs/kruskal_optimized_" + test_name;
+            printf("=========== %s =========== \n", test_name.c_str());
+            kruskalTest2(inFile, outFile);
+            cout << endl;
+        }
+    }
+
 }

@@ -128,7 +128,7 @@ void Prim::printMST(string fpOut) {
             }
             outEdges[s] = e;
             treeWeight = treeWeight + edgeWeights[j];
-            fOut << edges[j] + 1 << ',' << j + 1 << ','
+            fOut << s << ',' << e << ','
                  << edgeWeights[j] << endl;
         }
     }
